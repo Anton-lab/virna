@@ -1,0 +1,11 @@
+@mixin pseudo-base($width, $height:0) {
+  content: '';
+  display: inline-block;
+  width: $width;
+  height: $height;
+}
+
+@mixin pseudo-icon($width, $height, $icon) {
+  @include pseudo-base($width, $height);
+  @include icons-sprite($icon);
+}

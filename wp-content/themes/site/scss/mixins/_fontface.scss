@@ -1,0 +1,16 @@
+@mixin fontface($font-name, $font-weight,$annex,$i) {
+  @font-face {
+    font-family: "#{$font-name}";
+    font-weight: $font-weight;
+    @if ($i != 'n') {
+      font-style: $i;
+    }
+    @if ($annex != 'n') {
+      src: url('/wp-content/themes/site/fonts/#{$font-name}-#{$annex}.woff') format('woff'),
+      url('/wp-content/themes/site/fonts/#{$font-name}-#{$annex}.woff2') format('woff2'),
+    } @else {
+      src: url('/wp-content/themes/site/fonts/#{$font-name}.woff') format('woff'),
+      url('/wp-content/themes/site/fonts/#{$font-name}.woff2') format('woff2'),
+    }
+  }
+}

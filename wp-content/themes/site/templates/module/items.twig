@@ -1,0 +1,18 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="content">
+        <div class="container">
+            {{ fn('breadcrumbs') }}
+
+            <h3 class="title_page">{{ title }}</h3>
+
+            {% if data %}
+                {% include'post-types/module/items_block.twig' %}
+            {% else %}
+                <p>{{ __('Ничего нет') }}</p>
+            {% endif %}
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,198 @@
+@charset "UTF-8";
+
+//partials
+@import "variables";
+@import "reset";
+
+//mixins
+@import "mixins/compass";
+@import "mixins/breakpoints";
+@import "mixins/clearfix";
+@import "mixins/capture";
+@import "mixins/heading";
+@import "mixins/pseudo";
+@import "mixins/flexbox";
+
+
+html, body {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  @include flexbox;
+  @include flex-direction(column);
+  position: relative;
+  font-family: $font-family;
+  font-size: $font-size;
+  padding: 10px;
+  color: $text-color;
+  width: 100vw;
+  max-width: 100%;
+
+  &.fancybox-iosfix {
+    position: relative !important;
+    left: 0;
+    top: inherit !important;
+    right: 0;
+  }
+
+  .wrap {
+    flex: 1 0 auto;
+    background-color: $background-color;
+    //@include clearfix;
+  }
+}
+
+ul, ol {
+  list-style-position: outside;
+  margin-bottom: 25px;
+
+  li {
+    margin-bottom: 10px;
+    margin-left: 15px;
+    font-size: $font-size;
+    line-height: 1.2;
+    color: $text-color;
+  }
+}
+
+@if ($list-image == true) {
+  ul {
+    list-style-image: url("../images/list.png");
+  }
+}
+
+a {
+  text-decoration: underline;
+  color: $link-color;
+
+  &:hover {
+    text-decoration: none;
+    @if ($link-hover-color != false) {
+      color: $link-hover-color;
+    }
+  }
+
+  img {
+    border: none;
+  }
+}
+
+@include heading();
+p {
+  margin-bottom: $paragraph-margin;
+  font-size: $font-size-paragraph;
+  line-height: $paragraph-height;
+  color: $paragraph-color;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 40px;
+  border-collapse: collapse;
+  font-family: $font-family;
+
+  th, td {
+    padding: 15px 10px;
+    border: 1px solid $table-border-color;
+    font-size: $font-size-paragraph;
+    color: $table-color;
+    @include breakpoint(sxs) {
+      padding: 5px;
+    }
+  }
+
+  th {
+    border-bottom-width: 3px;
+    font-weight: 400;
+    @if ($table-heading-color != false) {
+      color: $table-heading-color;
+    }
+  }
+}
+
+input[type="submit"] {
+  font-family: $font-family-validation;
+  outline: none;
+  cursor: pointer;
+  line-height: 1.3;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+textarea, input, select {
+  font-family: $font-family-validation;
+}
+
+button {
+  border: none;
+}
+
+.content {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.text-page {
+  @include clearfix;
+
+  img {
+    max-width: 100%;
+    @include breakpoint(sm-down) {
+      float: none !important;
+      display: block;
+      margin: 0 auto 30px !important;
+    }
+  }
+
+  ul, ol {
+    overflow: hidden;
+
+    li {
+      position: relative;
+      left: 15px;
+      padding-right: 15px;
+      font-size: $font-size-paragraph;
+    }
+  }
+
+  table img {
+    float: none;
+    max-width: inherit;
+    margin: 0;
+  }
+}
+
+.attention {
+  display: none;
+}
+
+html[data-useragent*='MSIE 10.0'] {
+  body * {
+    display: none !important;
+  }
+
+  .attention img {
+    display: block !important;
+    margin: 0 auto 30px;
+  }
+
+  .attention {
+    display: block !important;
+    padding-top: 15%;
+    font-size: 60px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.overflow-wrap {
+  overflow-y: hidden;
+  overflow-x: auto;
+}

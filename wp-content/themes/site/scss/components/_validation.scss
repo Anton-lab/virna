@@ -1,0 +1,139 @@
+.validation {
+
+  .validation-field {
+    width: 100%;
+    position: relative;
+
+    %inputs {
+      height: 70px;
+      width: 100%;
+      padding-left: 20px;
+      transition: all .3s ease-in-out;
+      color: $text-color;
+      border: 1px solid $color1;
+
+      &:hover, &:focus {
+        border-color: $color1;
+      }
+
+      &:focus + .placeholder {
+        opacity: 0;
+        left: -15px;
+      }
+      &:focus + .error + .placeholder {
+        opacity: 0;
+        left: -15px;
+      }
+
+      &.error {
+        border: 1px solid #e25353;
+      }
+    }
+
+    input, select {
+      @extend %inputs;
+      vertical-align: middle;
+    }
+
+    textarea {
+      @extend %inputs;
+      resize: vertical;
+    }
+
+    &.message-area {
+      width: 100%;
+
+      .placeholder {
+        top: 25%;
+      }
+    }
+
+    .placeholder {
+      pointer-events: none;
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      @include transform(translateY(-50%));
+      transition: all .3s ease-in-out;
+      color: rgba(34, 34, 34, 0.8);
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+
+    label {
+      display: none;
+
+      &.error {
+        display: block;
+        position: absolute;
+        right: 6px;
+        bottom: 6px;
+        color: red;
+        font-size: 12px;
+      }
+    }
+
+    &.active {
+      & > .placeholder {
+        opacity: 0;
+      }
+    }
+
+  }
+
+  .form-success {
+    position: relative;
+
+    &.waiting:after {
+      content: '';
+      position: absolute;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url(#{$link-image}/loading.gif);
+      pointer-events: none;
+    }
+
+    &.green {
+      text-align: center;
+      span{
+        display: block;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  .form-title {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 36px;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  .form-subtitle {
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .form-text {
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+  }
+
+  .form-wrap {
+    @include flexbox;
+    @include flex-wrap(wrap);
+  }
+}

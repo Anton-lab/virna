@@ -1,0 +1,10 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="text-page content">
+        <div class="container">
+            <h3>{{ wp_title }}</h3>
+            {{ fn('wp_list_pages') }}
+        </div>
+    </div>
+{% endblock %}

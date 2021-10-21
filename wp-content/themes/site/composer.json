@@ -1,0 +1,7 @@
+{
+    "require": {
+        "timber/timber": "^1.18",
+        "scssphp/scssphp": "^1.6.0",
+        "matthiasmullie/minify": "^1.3"
+    }
+}

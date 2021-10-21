@@ -1,0 +1,5 @@
+@import "mixins/fontface";
+
+@include fontface(CeraPro, 700, Bold, n);
+@include fontface(CeraPro, 500, Medium, n);
+@include fontface(CeraPro, 400, Regular, n);

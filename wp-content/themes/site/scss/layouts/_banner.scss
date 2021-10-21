@@ -1,0 +1,236 @@
+.banner {
+  height: 100vh;
+  min-height: 1055px;
+  position: relative;
+  overflow: hidden;
+  @include flexbox;
+  @media (max-width: 1440px) {
+    min-height: 800px;
+    max-height: 800px;
+  }
+  @include breakpoint(sm-down) {
+    min-height: 530px;
+    max-height: 530px;
+  }
+
+  &:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    background: rgba($background-color, 0.85);
+    backdrop-filter: blur(40px);
+    height: 100%;
+    width: 45%;
+    z-index: 2;
+    @media (max-width: 1440px) {
+      width: 48%;
+    }
+    @include breakpoint(sm-down) {
+      width: 43%;
+    }
+  }
+
+  &:before {
+    position: absolute;
+    content: '';
+    right: 0;
+    top: 0;
+    height: 100%;
+    background-color: $background-color;
+    z-index: 2;
+    width: 23%;
+    @media (max-width: 1440px) {
+      width: 20%;
+    }
+    @include breakpoint(sm-down) {
+      width: 23%;
+    }
+  }
+
+  & > img {
+    z-index: 1;
+  }
+
+  .container {
+    position: relative;
+    z-index: 3;
+    @include flexbox;
+  }
+
+  &__wrap {
+    @include flexbox;
+    width: 100%;
+  }
+
+  &__item {
+    height: 100%;
+    position: relative;
+    @include flexbox;
+    @include flex-direction(column);
+    @include justify-content(center);
+
+    &:last-of-type {
+      margin-left: auto;
+    }
+
+    .language_mobile {
+      display: none;
+      position: absolute;
+      bottom: 37px;
+      right: 10px;
+
+      .icon {
+        margin-left: 2px;
+        width: 10px;
+        height: 5px;
+        fill: transparent;
+      }
+
+      @include breakpoint(sxs) {
+        @include flexbox;
+        @include align-items(center);
+      }
+    }
+  }
+
+  &__title {
+    max-width: 470px;
+    line-height: 72px;
+    margin-top: -300px;
+    @media(max-width: 1440px) {
+      margin-top: -150px;
+    }
+    @include breakpoint(sm-down) {
+      max-width: 290px;
+      line-height: 48px;
+      margin-top: -80px;
+    }
+    @include breakpoint(sxs) {
+      display: none;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 500;
+    @include rotate(-90);
+    max-width: 130px;
+    height: max-content;
+    transform-origin: 50% 180%;
+    text-align: end;
+    @include breakpoint(sm-down) {
+      transform-origin: 40% 140%;
+    }
+    @include breakpoint(sxs) {
+      display: none;
+    }
+  }
+
+  &__line {
+    position: absolute;
+    bottom: 54px;
+    left: 0;
+    z-index: 3;
+    @include flexbox;
+    @include align-items(center);
+    width: 80%;
+    @include breakpoint(sm-down) {
+      bottom: 37px;
+    }
+
+    .burger {
+      position: relative;
+      width: 18px;
+      height: 13px;
+      display: inline-block;
+      margin-right: 118px;
+      @media(max-width: 1440px) {
+        margin-right: 82px;
+      }
+      @include breakpoint(sxs) {
+        margin-right: 32px;
+      }
+
+      div,
+      div:before {
+        background: $text-color;
+        position: absolute;
+        height: 1px;
+        width: 18px;
+        left: 50%;
+        @include transform(translateX(-50%));
+      }
+
+      div:first-child {
+        top: 0;
+      }
+
+      div:nth-child(2) {
+        top: 7px;
+      }
+
+      div:nth-child(3) {
+        top: 13px;
+      }
+    }
+
+    .buttons-block {
+      @include flexbox;
+      @include align-items(center);
+
+      .icon {
+        width: 20px;
+        height: 20px;
+        fill: transparent;
+        margin-right: 4px;
+        @media (max-width: 1440px) {
+          width: 15px;
+          height: 15px;
+        }
+        @include breakpoint(sxs) {
+          margin-right: 22px;
+        }
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .language {
+      margin-left: auto;
+      @include flexbox;
+      @include align-items(center);
+      @media(max-width: 1440px) {
+        font-size: 14px;
+      }
+      @include breakpoint(sm-down) {
+        display: none;
+      }
+
+      .icon {
+        margin-left: 2px;
+        width: 10px;
+        height: 5px;
+        fill: transparent;
+      }
+    }
+  }
+
+  &__right-text {
+    font-size: 16px;
+    font-weight: 400;
+    @include rotate(90);
+    transform-origin: 100% 100%;
+    @include breakpoint(sm-down) {
+      margin-bottom: -130px;
+      transform-origin: 80% 100%;
+    }
+
+    span {
+      font-weight: 500;
+      margin-left: 30px;
+    }
+  }
+}

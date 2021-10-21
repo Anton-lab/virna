@@ -1,0 +1,7 @@
+{% if data %}
+    <div>
+        {% for val in data %}
+            {% include'post-types/module/item_preview.twig' %}
+        {% endfor %}
+    </div>
+{% endif %}

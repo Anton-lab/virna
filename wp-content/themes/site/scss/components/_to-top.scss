@@ -1,0 +1,15 @@
+.to-top {
+  z-index: 30;
+  position: fixed;
+  right: 2%;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 6px solid $color1;
+  background-color: #fff;
+  @media (max-width: 1800px) {
+    right: 2%;
+  }
+}

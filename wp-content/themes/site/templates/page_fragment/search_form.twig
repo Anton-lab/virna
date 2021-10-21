@@ -1,0 +1,5 @@
+<form class="search-form" role="search" method="get" id="searchform" action="{{ fn('home_url') }}">
+    <input class="search-form__input" type="text" value="{{ fn('get_search_query') }}" name="s" id="s" placeholder="{{ __('Поиск') }}" autocomplete="off"/>
+    <input type="submit" id="search_submit">
+    <ul class="search_list"></ul>
+</form>

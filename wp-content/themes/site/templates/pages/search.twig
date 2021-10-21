@@ -1,0 +1,20 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <div class="search-page content">
+        <div class="container">
+            {% if posts.found_posts > 0 %}
+                {% for val in posts %}
+                    <div class="line">{{ val.post_title }}</div>
+                    {% if val.thumbnail.src %}
+                        <img src="{{val.thumbnail.src}}" alt=""/>
+                    {% endif %}
+                {% endfor %}
+{#                {% include '/page_fragment/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %} todo: не тестировалось #}
+            {% else %}
+                <div class="search_empty">{{ __('Ничего нет') }}</div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

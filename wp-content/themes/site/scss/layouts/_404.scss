@@ -1,0 +1,41 @@
+.p-404 {
+  text-align: center;
+  padding-bottom: 80px;
+  @include breakpoint(sm-down){
+    padding-bottom: 50px;
+  }
+  .title {
+    font-weight: 700;
+    font-size: 280px;
+    text-align: center;
+    color: #fff;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: $color1;
+    @include breakpoint(sm-down) {
+      font-size: 250px;
+    }
+    @include breakpoint(xs) {
+      font-size: 210px;
+    }
+    @include breakpoint(smxs) {
+      font-size: 150px;
+    }
+  }
+  .text {
+    font-weight: 700;
+    font-size: 64px;
+    color: $color1;
+    margin-top: -20px;
+    margin-bottom: 30px;
+    @include breakpoint(sm-down) {
+      font-size: 50px;
+    }
+    @include breakpoint(xs) {
+      font-size: 35px;
+    }
+    @include breakpoint(smxs) {
+      font-size: 30px;
+      margin-top: -5px;
+    }
+  }
+}

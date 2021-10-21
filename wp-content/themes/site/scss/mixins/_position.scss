@@ -1,0 +1,42 @@
+@mixin absolute($top, $left:auto, $bottom:auto, $right:auto) {
+  position: absolute;
+
+  @if ($top == true) {
+    top: 0;
+    left: 0;
+    @if ($left == false) {
+      bottom: $bottom;
+      right: $right;
+    } @else {
+      bottom: 0;
+      right: 0;
+    }
+  } @else {
+    top: $top;
+    left: $left;
+    bottom: $bottom;
+    right: $right;
+  }
+}
+
+@mixin centering-margin {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+@mixin centering-transform{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%,-50%));
+}
+
+@mixin centering-table {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}

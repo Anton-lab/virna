@@ -1,0 +1,14 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="content">
+        <div class="container">
+            {{ fn('breadcrumbs') }}
+
+            <h3 class="title_page">{{ title }}</h3>
+
+            {% include'post-types/module/sections_block.twig' %}
+
+        </div>
+    </div>
+{% endblock %}

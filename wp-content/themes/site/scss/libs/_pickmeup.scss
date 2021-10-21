@@ -1,0 +1,163 @@
+.pickmeup {
+  background: #ffffff;
+  border-radius: .4em;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  display: inline-block;
+  position: absolute;
+  touch-action: manipulation;
+  z-index: 10000000;
+  * {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .pmu-instance {
+    display: inline-block;
+    height: 13.8em;
+    padding: .5em;
+    text-align: center;
+    width: 15em;
+    .pmu-button {
+      color: #000;
+      cursor: pointer;
+      outline: none;
+      text-decoration: none;
+      &:hover {
+        background: transparent;
+        color: #88c5eb;
+      }
+    }
+    .pmu-today {
+      background: #c2e4f9;
+      color: #88c5eb;
+    }
+    .pmu-not-in-month {
+      color: #e6e6e6;
+    }
+    .pmu-disabled {
+      color: #333;
+      cursor: default;
+      &:hover {
+        color: #333;
+        cursor: default;
+      }
+    }
+    .pmu-selected {
+      background: #136a9f;
+      color: #eee;
+    }
+    .pmu-not-in-month.pmu-selected {
+      background: #17384d;
+    }
+    nav {
+      color: #eee;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      line-height: 2em;
+      * {
+        &:first-child {
+          &:hover {
+            color: #88c5eb;
+          }
+        }
+      }
+      .pmu-prev {
+        display: none;
+        height: 2em;
+        width: 1em;
+      }
+      .pmu-next {
+        display: none;
+        height: 2em;
+        width: 1em;
+      }
+      .pmu-month {
+        width: 14em;
+      }
+    }
+    .pmu-years {
+      * {
+        display: inline-block;
+        line-height: 3.6em;
+        width: 3.5em;
+      }
+    }
+    .pmu-months {
+      * {
+        display: inline-block;
+        line-height: 3.6em;
+        width: 3.5em;
+      }
+    }
+    .pmu-day-of-week {
+      color: #999;
+      cursor: default;
+      * {
+        display: inline-block;
+        line-height: 1.5em;
+        width: 2em;
+        line-height: 1.8em;
+      }
+    }
+    .pmu-days {
+      * {
+        display: inline-block;
+        line-height: 1.5em;
+        width: 2em;
+      }
+    }
+    &:first-child {
+      .pmu-prev {
+        display: block;
+      }
+      .pmu-month {
+        width: 13em;
+      }
+      &:last-child {
+        .pmu-month {
+          width: 12em;
+        }
+      }
+    }
+    &:last-child {
+      .pmu-next {
+        display: block;
+      }
+      .pmu-month {
+        width: 13em;
+      }
+    }
+  }
+  &:not(.pmu-view-days) {
+    .pmu-days {
+      display: none;
+    }
+    .pmu-day-of-week {
+      display: none;
+    }
+  }
+  &:not(.pmu-view-months) {
+    .pmu-months {
+      display: none;
+    }
+  }
+  &:not(.pmu-view-years) {
+    .pmu-years {
+      display: none;
+    }
+  }
+}
+.pickmeup.pmu-flat {
+  position: relative;
+}
+.pickmeup.pmu-hidden {
+  display: none;
+}
+
+@include breakpoint(sxs) {
+  .pickmeup {
+    left: 50% !important;
+    @include transform(translateX(-50%));
+  }
+}

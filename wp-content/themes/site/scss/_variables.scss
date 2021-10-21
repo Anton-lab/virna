@@ -1,0 +1,45 @@
+$font-family: 'CeraPro', sans-serif;
+$font-family-alt: $font-family;
+$font-family-validation: $font-family;
+$font-family-headings: $font-family;
+
+$text-color: #000000;
+$color1: #D4C17F;
+
+$font-size: 16px;
+$font-size-paragraph: 16px;
+$paragraph-margin: 24px; //margin-bottom
+$paragraph-height: 1.5;  //line-height
+$paragraph-color: $text-color;
+$list-image: false;  //list.png
+
+$heading-margin: 30, 30, 48, 46, 44, 42;
+$heading-font-size: 72, 56, 31, 28, 26, 24;
+$heading-font-weight: 700, 400,700,700,700,700; // 1 = "normal"(400)
+$heading-uppercase: 0,0,0,0,0,0; // 0 = "none", 1 = "uppercase"
+$heading-text-align: l,l,l,l,l,l; // c = "center", l = "left", r = "right"
+$heading-color: $text-color;
+
+// SM Heading sizes
+$sm-heading-change: true;
+$sm-heading-margin: 50, 35, false, false, false, false;
+$sm-heading-font-size: 48, 36, 24, false, false, false;
+// XS Heading sizes
+$xs-heading-change: true;
+$xs-heading-margin: false, false, false, false, false, false;
+$xs-heading-font-size: 42, 32, 24, 22, 20, 18;
+
+
+$background-color: #ffffff;
+$link-color: $color1;
+$link-hover-color: false;
+
+$table-border-color: #d6d6d6;
+$table-color: #3c3c3c;
+$table-heading-color: false;
+
+$z-index-blocker: 9;
+$z-index-modal: 10;
+$z-index-close-modal: 11;
+
+$link-image: '/wp-content/themes/site/images/';

@@ -1,0 +1,9 @@
+<div class="pagination-min">
+    <a class="pagination_item{% if not post.prev.link %} disabled{% endif %}"
+       href="{{ post.prev.link }}">{{ __('Предыдущий') }}</a>
+
+    <a class="pagination_item back" href="{{ site.link }}/{{ post.type }}/">{{ __('Назад') }}</a>
+
+    <a class="pagination_item{% if not post.next.link %} disabled{% endif %}"
+       href="{{ post.next.link }}">{{ __('Следующий') }}</a>
+</div>

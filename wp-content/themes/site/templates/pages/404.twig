@@ -1,0 +1,13 @@
+{% extends "base.twig" %}
+
+{% block content %}
+   <div class="content">
+      <div class="container">
+         <div class="section p-404">
+            <div class="title">404</div>
+            <div class="text">{{ __("Похоже, что Вы потерялись") }}</div>
+            <a href="{{ site.link }}" class="button-1"><span>{{ __("На главную") }}</span></a>
+         </div>
+      </div>
+   </div>
+{% endblock %}

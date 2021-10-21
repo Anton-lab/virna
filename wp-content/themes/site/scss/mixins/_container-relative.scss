@@ -1,0 +1,15 @@
+@mixin container-relative($align){
+  position: absolute;
+  #{$align}: calc(50% - 645px);
+
+  @content;
+  @include breakpoint(lg){
+    #{$align}: calc(50% - 570px);
+  }
+  @include breakpoint(md){
+    #{$align}: calc(50% - 485px);
+  }
+  @include breakpoint(sm){
+    #{$align}: calc(50% - 375px);
+  }
+}

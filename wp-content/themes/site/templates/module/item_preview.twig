@@ -1,0 +1,6 @@
+<a href="{{ site.link }}/{{ val.post_type }}/{{ val.post_name }}/">
+    <div class="image">
+        <img src=" {{ Image(val.fields.image).src| resize(133,280) |towebp }}" alt="{{ val.post_title }}">
+    </div>
+    <div class="title">{{ val.post_title }}</div>
+</a>

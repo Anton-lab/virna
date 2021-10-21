@@ -1,0 +1,7 @@
+.idea
+/wp-content/themes/site/scripts/*.js
+!/wp-content/themes/site/scripts/system.js
+!/wp-content/themes/site/scripts/jquery.js
+
+/wp-content/themes/site/style/*
+!/wp-content/themes/site/style/.gitkeep

@@ -1,0 +1,10 @@
+<div>
+    {% for val in data %}
+        <a href="{{ site.link }}/{{ val.taxonomy }}/{{ val.slug }}/">
+            <div class="image">
+                <img src="{{ Image(val.fields.image).src |resize(220, 220) |towebp }}" alt="{{ val.name }}">
+            </div>
+            <div class="title">{{ val.name }}</div>
+        </a>
+    {% endfor %}
+</div>

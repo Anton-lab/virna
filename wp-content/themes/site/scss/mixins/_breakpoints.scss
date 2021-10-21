@@ -1,0 +1,68 @@
+@mixin breakpoint($point) {
+  @if $point == lg-bg {
+    @media (min-width: 1500px) {
+      @content;
+    }
+  }@else if $point == lg-hd {
+    @media (min-width: 1400px) and (max-width: 1499px) {
+      @content;
+    }
+  }@else if $point == lg {
+    @media (min-width: 1200px) and (max-width: 1399px){
+      @content;
+    }
+  }@else if $point == md {
+    @media (min-width: 1025px) and (max-width: 1199px) {
+      @content;
+    }
+  }@else if $point == md-down {
+    @media (max-width: 1199px){
+      @content;
+    }
+  }@else if $point == md-sm {
+    @media (min-width: 768px) and (max-width: 1199px){
+      @content;
+    }
+  }@else if $point == md-up {
+    @media (min-width: 1025px){
+      @content;
+    }
+  } @else if $point == sm {
+    @media (min-width: 768px) and (max-width: 1024px) {
+      @content;
+    }
+  }@else if $point == sm-down {
+    @media (max-width: 1024px){
+      @content;
+    }
+    @media (hover: none) and (pointer: coarse) {
+      @content;
+    }
+  }@else if $point == sm-up {
+    @media (min-width: 768px){
+      @content;
+    }
+  }@else if $point == xs {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+  @else if $point == mxs {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+  @else if $point == smxs {
+    @media (max-width: 500px) {
+      @content;
+    }
+  }@else if $point == sxs {
+    @media (max-width: 450px) {
+      @content;
+    }
+  }@else if $point == ultra-sxs {
+    @media (max-width: 359px) {
+      @content;
+    }
+  }
+}

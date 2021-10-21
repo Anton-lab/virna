@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+@import "mixins/compass";
+@import "mixins/breakpoints";
+@import "mixins/flexbox";
+@import "mixins/position";
+@import "mixins/item-img";
+@import "mixins/clearfix";
+@import "mixins/list-reset";
+@import "mixins/placeholder";
+@import "mixins/user-select";
+@import "mixins/capture";
+@import "mixins/inline-positioning";
+@import "mixins/container-relative";
+@import "mixins/slider-fix";
+@import "mixins/background";
+@import "mixins/fontface";
+body{padding: 0;}
+
+@import "variables";
+@import "grid";
+@import "fonts";
+
+//libs
+//@import "libs/slick-theme";
+//@import "libs/scrollbar";
+//@import "libs/popup-slide";
+//@import "libs/fancybox3";
+//@import "libs/pickmeup";
+//@import "libs/nouislider";
+//@import "libs/select2";
+
+//components
+@import "components/button";
+@import "components/search";
+@import "components/object-fit";
+@import "components/validation";
+@import "components/breadcrumbs";
+@import "components/pagination";
+
+//layouts
+@import "layouts/header";
+@import "layouts/banner";
+@import "layouts/colors";
+@import "layouts/thank";
+@import "layouts/404";
+@import "layouts/site-map";
+@import "layouts/footer";

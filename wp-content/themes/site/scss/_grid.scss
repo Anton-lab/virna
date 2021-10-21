@@ -1,0 +1,117 @@
+::before,::after {
+  box-sizing: border-box;
+}
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  @include breakpoint(lg-bg){
+    width: 1440px;
+  }
+  @include breakpoint(lg-hd){
+    width: 1200px;
+  }
+  @include breakpoint(lg){
+    width: 1140px;
+  }
+  @include breakpoint(md){
+    width: 1000px;
+  }
+  @include breakpoint(sm){
+    width: 750px;
+  }
+  @include breakpoint(xs){
+    width: 100%;
+  }
+}
+
+%flex {
+  @include flexbox;
+}
+%space-between {
+  @include justify-content(space-between);
+}
+%justify-top {
+  @include justify-content(flex-start);
+}
+%justify-center {
+  @include justify-content(center);
+}
+%align-items-center {
+  @include align-items(center);
+}
+%align-items-start {
+  @include align-items(flex-start);
+}
+%flex-column {
+  @include flex-direction(column);
+}
+%flex-wrap {
+  @include flex-wrap(wrap);
+}
+.flex {
+  @extend %flex;
+}
+.ac {
+  @extend %flex;
+  @extend %align-items-center;
+}
+.as {
+  @extend %flex;
+  @extend %align-items-start;
+}
+.ac-jc {
+  @extend %flex;
+  @extend %justify-center;
+  @extend %align-items-center;
+}
+.ac-jb {
+  @extend %flex;
+  @extend %space-between;
+  @extend %align-items-center;
+}
+.as-jb {
+  @extend %flex;
+  @extend %space-between;
+  @extend %align-items-start;
+}
+.jb {
+  @extend %flex;
+  @extend %space-between;
+}
+.as-jc {
+  @extend %flex;
+  @extend %justify-center;
+  @extend %align-items-start;
+}
+.ae-jb {
+  @extend %flex;
+  @extend %space-between;
+  @include align-items(flex-end);
+}
+.column-jc {
+  @extend %flex;
+  @extend %flex-column;
+  @extend %justify-center;
+}
+.column-js {
+  @extend %flex;
+  @extend %flex-column;
+  @extend %justify-top;
+}
+.shrink {
+  @include flex-shrink(0);
+}
+.flex-wrap {
+  @extend %flex-wrap;
+}

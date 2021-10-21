@@ -1,0 +1,45 @@
+.breadcrumbs {
+  list-style: none;
+  @include flexbox;
+  @include align-items(center);
+  margin: 0 0 35px 0;
+
+  li {
+    margin: 0 15px 0 0;
+
+    a {
+      text-decoration: none;
+      color: $text-color;
+      font-weight: 500;
+      font-size: 14px;
+      transition: all .3s ease-in-out;
+      position: relative;
+
+      &:after {
+        content: '\005C';
+        position: absolute;
+        left: calc(100% + 5px);
+        top: 50%;
+        width: 5px;
+        height: 14px;
+        @include transform(translateY(-50%));
+      }
+
+      &:hover {
+        color: $color1;
+      }
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+
+      a {
+        pointer-events: none;
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}

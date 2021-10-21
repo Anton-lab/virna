@@ -1,0 +1,117 @@
+.thank {
+  margin-bottom: 175px;
+  @media(max-width: 1440px) {
+    margin-bottom: 80px;
+  }
+  @include breakpoint(sxs){
+    margin-bottom: 120px;
+  }
+
+  .container {
+    @include flexbox;
+
+    .column {
+      width: 50%;
+      @include flexbox;
+      @include flex-direction(column);
+      @include justify-content(center);
+      @include breakpoint(sxs) {
+        &:first-of-type {
+          width: 35%;
+        }
+        &:last-of-type {
+          width: 65%;
+        }
+      }
+    }
+  }
+
+  &__bonum {
+    margin-bottom: 35px;
+
+    .icon {
+      width: 65px;
+      height: 20px;
+    }
+  }
+
+  &__decor {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(40px);
+    position: relative;
+    @include flexbox;
+
+    .ellipse {
+      width: 411px;
+      height: 411px;
+      background: #D7969E;
+      filter: blur(200px);
+      position: absolute;
+      left: 0;
+      top: 50%;
+      @include transform(translateY(-50%));
+      @media(max-width: 1440px) {
+        width: 328px;
+        height: 328px;
+      }
+      @include breakpoint(sm-down) {
+        width: 194px;
+        height: 194px;
+      }
+      @include breakpoint(xs) {
+        width: 175px;
+        height: 175px;
+      }
+      @include breakpoint(sxs) {
+        width: 127px;
+        height: 127px;
+      }
+    }
+
+    .icon {
+      height: 528px;
+      margin-left: auto;
+      margin-right: 80px;
+      fill: #D7969E;
+      @media(max-width: 1440px) {
+        height: 477px;
+      }
+      @include breakpoint(sm-down) {
+        height: 270px;
+        width: 50px;
+        margin-right: 0;
+      }
+      @include breakpoint(xs) {
+        height: 230px;
+        margin-right: 80px;
+      }
+      @include breakpoint(sxs) {
+        height: 140px;
+        margin-right: 50px;
+      }
+    }
+  }
+
+  &__text {
+    font-weight: 500;
+    font-size: 14px;
+    @include rotate(-90);
+    max-width: 90px;
+    height: max-content;
+    transform-origin: 50% 200%;
+    margin-left: 80px;
+    @include breakpoint(sm-down) {
+      font-size: 13px;
+    }
+    @include breakpoint(xs) {
+      margin-left: 0;
+    }
+  }
+
+  &__title {
+    margin-left: 80px;
+    @include breakpoint(xs) {
+      margin-left: 0;
+    }
+  }
+}

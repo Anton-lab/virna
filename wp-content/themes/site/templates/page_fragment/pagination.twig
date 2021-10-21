@@ -1,0 +1,41 @@
+{% if posts.pagination.pages is not empty %}
+    <ul class="pagination">
+
+        {# Previous #}
+        {% if posts.pagination.prev %}
+            <li class="prev btn">
+                <a href="{{ posts.pagination.prev.link }}">Previous</a>
+            </li>
+        {% else %}
+            <li class="prev btn disabled">
+                <button disabled>Previous</button>
+            </li>
+        {% endif %}
+
+        {# Pages #}
+        <ul class="number-wrap">
+            {% for page in posts.pagination.pages %}
+                {% if page.link %}
+                    <li class="pagination_item">
+                        <a href="{{ page.link }}" class="{{ page.class }}">{{ page.title }}</a>
+                    </li>
+                {% else %}
+                    <li class="current">
+                        <span class="{{ page.class }}">{{ page.title }}</span>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+
+        {# Next #}
+        {% if posts.pagination.next %}
+            <li class="next btn">
+                <a href="{{ posts.pagination.next.link }}">Next</a>
+            </li>
+        {% else %}
+            <li class="next btn disabled">
+                <button disabled>Next</button>
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}
